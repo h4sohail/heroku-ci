@@ -10,5 +10,5 @@ How to use:
 1. Install Heroku CLI and login to your account.
 2. Clone your GitHub repository inside the 'projects' folder.
 3. Edit server.py and add your github credentials and other information such as application name.
-4. Make the script executable (chmod +x) and run it
-5. Enjoy automatic code deployment to Heroku
+4. Make the script executable (chmod +x) and run it.
+5. Enjoy automatic code deployment to Heroku.
