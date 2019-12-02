@@ -31,21 +31,21 @@ while(exit_condition):
             initial_time_stamp = current_time_stamp
             print('Change Detected')
             try:
-                if os.path.exists(f'projects/{github_repo_name}'):
-                    rmtree(f'projects/{github_repo_name}') # Delete the old files
+                if os.path.exists(f'/home/ubuntu/code/heroku_ci/projects/{github_repo_name}'):
+                    rmtree(f'/home/ubuntu/code/heroku_ci/projects/{github_repo_name}') # Delete the old files
                     print('Deleted old files')
             except OSError as identifier:
                 print(identifier)
             
             try:
-                os.chdir('projects')
+                os.chdir('/home/ubuntu/code/heroku_ci/projects')
                 os.system(f'git clone {github_repo_clone_url}') # Clone the files
                 print('Cloned new files')
             except OSError as identifier:
                 print(identifier) 
             
             try:
-                os.chdir(f'{github_repo_name}') 
+                os.chdir(f'/home/ubuntu/code/heroku_ci/projects/{github_repo_name}') 
                 print(f'Changed directory to {github_repo_name}') # Change the directory
             except OSError as identifier:
                 print(identifier) 
