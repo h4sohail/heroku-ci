@@ -1,5 +1,5 @@
 # Heroku CI
-Simple Continuous Integration (CI) for a Python application hosted on Heroku
+Simple Continuous Integration (CI) pipeline for a Python application hosted on Heroku
 
 How it works:
 
