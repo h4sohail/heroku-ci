@@ -29,28 +29,47 @@ while(exit_condition):
         
         if initial_time_stamp != current_time_stamp: # Check if the two timestamps are not equal
             initial_time_stamp = current_time_stamp
+            try:
+                if os.path.exists(f'projects/{github_repo_name}'):
+                    rmtree(f'projects/{github_repo_name}') # Delete the old files
+                    print('Deleted old files')
+            except OSError as identifier:
+                print(identifier)
             
-            rmtree(f'projects/{github_repo_name}') # Delete the old files
-            print('Deleted old files')
+            try:
+                os.chdir('projects')
+                os.system(f'git clone {github_repo_clone_url}') # Clone the files
+                print('Cloned new files')
+            except OSError as identifier:
+                print(identifier) 
             
-            os.chdir('projects')
-            os.system(f'git clone {github_repo_clone_url}') # Clone the files
-            print('Cloned new files')
+            try:
+                os.chdir(f'{github_repo_name}') 
+                print(f'Changed directory to {github_repo_name}') # Change the directory
+            except OSError as identifier:
+                print(identifier) 
             
-            os.chdir(f'{github_repo_name}') 
-            print(f'Changed directory to {github_repo_name}') # Change the directory
+            try:
+                os.system(f'heroku git:remote -a {heroku_app_name}') # Add Heroku remote
+                print(f'Added heroku remote')
+            except OSError as identifier:
+                print(identifier)
+
+            try:
+                os.system(f'git pull heroku master') # Grab necessary files form Heroku
+                print(f'Got necessary files from heroku')
+            except OSError as identifier:
+                print(identifier)
             
-            os.system(f'heroku git:remote -a {heroku_app_name}') # Add Heroku remote
-            print(f'Added heroku remote')
-            
-            os.system(f'git pull heroku master') # Grab necessary files form Heroku
-            print(f'Got necessary files from heroku')
-            
-            os.system('git push heroku master') # Push to Heroku
-            print('Updated Heroku')
+            try:
+                os.system('git push heroku master') # Push to Heroku
+                print('Updated Heroku')
+            except OSError as identifier:
+                print(identifier)
         
         print('No changes')
         time.sleep(5)
+        
     else:
         print('Something went wrong :)')
         exit_condition = False
