@@ -1,5 +1,5 @@
 # Heroku CI
-Simple Continuous Integration (CI) for a Python application hosted on Heroku
+Simple Continuous Integration (CI) pipeline for a Python application hosted on Heroku
 
 How it works:
 
@@ -10,5 +10,5 @@ How to use:
 1. Install Heroku CLI and login to your account.
 2. Clone your GitHub repository inside the 'projects' folder.
 3. Edit server.py and add your github credentials and other information such as application name.
-4. Make the script executable (chmod +x) and run it
-5. Enjoy automatic code deployment to Heroku
+4. Make the script executable (chmod +x) and run it.
+5. Enjoy automatic code deployment to Heroku.
