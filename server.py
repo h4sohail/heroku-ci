@@ -1,6 +1,6 @@
 import requests
-import json, time, os, subprocess
-from shutil import copyfile, rmtree, datetime
+import json, time, os, subprocess, datetime
+from shutil import copyfile, rmtree
 
 heroku_app_name = 'Heroku-App-Name' # Heroku app name (get it from Heroku dashboard)
 
