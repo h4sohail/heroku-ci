@@ -3,7 +3,7 @@ Simple Continuous Integration (CI) for a Python application hosted on Heroku
 
 How it works:
 
-Tracks a github repository for changes, if a change is detected, pulls the source from github and adds heroku remote url (must be logged into to heroku cli) then pulls required files from heroku and ppdates heroku application. Checks every 5 seconds for changes.
+Tracks a github repository for changes, if a change is detected, pulls the source from github and adds Heroku remote url (must be logged into to Heroku cli) then pulls required files from Heroku and updates the Heroku application. Checks every 5 seconds for changes.
 
 How to use:
 
