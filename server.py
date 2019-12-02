@@ -27,7 +27,7 @@ while(exit_condition):
         data = json.loads(response.content)
         current_time_stamp = (data["updated_at"])  # Re-check every 5 seconds for when the repository was updated
         
-        if initial_time_stamp != current_time_stamp: # Check if the two timestamps are equal
+        if initial_time_stamp != current_time_stamp: # Check if the two timestamps are not equal
             initial_time_stamp = current_time_stamp
             
             rmtree(f'projects/{github_repo_name}') # Delete the old files
