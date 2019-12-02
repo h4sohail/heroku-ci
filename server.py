@@ -1,6 +1,6 @@
 import requests
 import json, time, os, subprocess
-from shutil import copyfile, rmtree
+from shutil import copyfile, rmtree, datetime
 
 heroku_app_name = 'Heroku-App-Name' # Heroku app name (get it from Heroku dashboard)
 
@@ -29,6 +29,7 @@ while(exit_condition):
         
         if initial_time_stamp != current_time_stamp: # Check if the two timestamps are not equal
             initial_time_stamp = current_time_stamp
+            print('Change Detected')
             try:
                 if os.path.exists(f'projects/{github_repo_name}'):
                     rmtree(f'projects/{github_repo_name}') # Delete the old files
@@ -67,9 +68,9 @@ while(exit_condition):
             except OSError as identifier:
                 print(identifier)
         
-        print('No changes')
+        print(datetime.datetime.now(), 'No changes')
         time.sleep(5)
-        
+
     else:
         print('Something went wrong :)')
         exit_condition = False
