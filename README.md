@@ -1,4 +1,4 @@
-# Heroku CI
+# Heroku CI (Work-in-progress)
 Simple Continuous Integration (CI) pipeline for a Python application hosted on Heroku
 
 How it works:
